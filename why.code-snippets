@@ -1,0 +1,61 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "timeout": {
+		"prefix": "timeout",
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "new Promise((resolve) => {",
+      "\tsetTimeout(() => {",
+      "\t\tresolve($0)",
+      "\t}, 1000)",
+      "})"
+    ],
+    "description": "promise timeout delay"
+  },
+  "Print to console": {
+		"prefix": "log",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": ["console.log('$1')"],
+    "description": "Log output to console"
+  },
+  "SFC": {
+		"prefix": "sfc",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "interface PropsType {",
+      "}",
+      "",
+      "const ${TM_FILENAME_BASE}: React.SFC<PropsType> = () => {",
+      "\treturn ($0)",
+      "}",
+      "export { ${TM_FILENAME_BASE} }",
+      ""
+    ],
+    "description": "react stateless functional component"
+  },
+  "import": {
+    "prefix": "import",
+		"scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "body": [
+      "import { $2 } from '$1'",
+    ],
+    "description": "import"
+  }
+}
